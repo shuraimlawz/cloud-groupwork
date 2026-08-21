@@ -1,0 +1,51 @@
+name: Security & Code Quality Audit
+
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+
+jobs:
+  npm-audit:
+    name: Dependency Security Scan
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+
+      - name: Generate Lockfile (if missing)
+        run: |
+          if [ ! -f package-lock.json ]; then
+            npm install --package-lock-only
+          fi
+
+
+      - name: Run NPM Security Audit
+        run: npm audit --audit-level=high
+
+
+  secret-detection:
+    name: Leaked Secret Scan
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+
+      - name: TruffleHog Secret Scan
+        uses: trufflesecurity/trufflehog@main
+        with:
+          extra_args: ---only-verified
