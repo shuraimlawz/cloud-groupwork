@@ -1,0 +1,48 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 120" width="100%" height="100%">
+  <defs>
+    <!-- Brand Gradients -->
+    <linearGradient id="cloudPrimary" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1A365D" />
+      <stop offset="100%" stop-color="#2B6CB0" />
+    </linearGradient>
+    <linearGradient id="accentGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00B4D8" />
+      <stop offset="100%" stop-color="#90E0EF" />
+    </linearGradient>
+    <filter id="subtleShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#1A365D" flood-opacity="0.15" />
+    </filter>
+  </defs>
+
+  <!-- Logo Mark Container -->
+  <g transform="translate(10, 10)" filter="url(#subtleShadow)">
+    <!-- Rounded Shield Background -->
+    <rect x="0" y="0" width="100" height="100" rx="22" fill="url(#cloudPrimary)" />
+    
+    <!-- Open Book Vector (Academic Base) -->
+    <path d="M 26 68 C 36 62, 46 62, 50 65 C 54 62, 64 62, 74 68 L 74 44 C 64 38, 54 38, 50 41 C 46 38, 36 38, 26 44 Z" 
+          fill="#FFFFFF" opacity="0.95" />
+    <path d="M 50 41 L 50 65" stroke="#2B6CB0" stroke-width="2.5" stroke-linecap="round"/>
+
+    <!-- Cloud & Upward Share Arrow (Cloud Tech Symbol) -->
+    <path d="M 32 40 C 28 32, 38 22, 48 26 C 54 20, 68 24, 68 32 C 74 34, 74 44, 66 44" 
+          fill="none" stroke="url(#accentGlow)" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+    
+    <!-- Upload/Share Arrow Head -->
+    <path d="M 50 18 L 50 36 M 42 24 L 50 16 L 58 24" 
+          stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  </g>
+
+  <!-- Brand Typography -->
+  <g transform="translate(130, 0)">
+    <text x="0" y="58" font-family="'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" 
+          font-size="36" font-weight="800" fill="#1A365D" letter-spacing="-0.8">
+      Campus<tspan fill="#2B6CB0">Share</tspan>
+    </text>
+    <text x="2" y="82" font-family="'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" 
+          font-size="12" font-weight="700" fill="#4A5568" letter-spacing="2">
+      ACADEMIC RESOURCE PORTAL
+    </text>
+  </g>
+</svg>
